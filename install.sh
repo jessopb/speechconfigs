@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #GET THE ENV
-source = ./env.sh
+source ./env.sh
 
 apt-get install -y software-properties-common
 add-apt-repository -y ppa:certbot/certbot
