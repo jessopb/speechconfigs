@@ -1,4 +1,4 @@
-#/etc/nginx/sites-available/sitenamefile
+#/etc/nginx/sites-available/myspeech
 
 server {
   listen 80;
