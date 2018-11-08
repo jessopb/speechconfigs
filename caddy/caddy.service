@@ -2,8 +2,8 @@
 Description=Caddy HTTP/2 web server
 
 [Service]
-User=caddy
-Group=caddy
+User=www-data
+Group=www-data
 Environment=CADDYPATH=/opt/caddy/store
 ExecStart=/usr/local/bin/caddy -agree=true -log=/opt/caddy/logs/caddy.log -conf=/opt/caddy/Caddyfile -root=/dev/null
 ExecReload=/bin/kill -USR1 $MAINPID
