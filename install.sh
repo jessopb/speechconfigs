@@ -7,15 +7,18 @@ apt-get install -y software-properties-common
 add-apt-repository -y ppa:certbot/certbot
 wget -qO- https://deb.nodesource.com/setup_8.x | sudo -E bash -
 apt-get update -y
-apt-get install -y nodejs curl tmux unzip nginx ufw certbot
-ufw allow 'OpenSSH'
-ufw allow 'Nginx Full'
+apt-get install -y nodejs curl tmux unzip
+ufw allow 22
+ufw allow 80
+ufw allow 443
 ufw allow 3333
 ufw allow 4444
 ufw default allow outgoing
 ufw default deny incoming
 ufw enable
 #LETSENCRYPT
+apt-get install -y nginx ufw certbot
+
 openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
 mkdir -p /var/lib/letsencrypt/.well-known
 chgrp www-data /var/lib/letsencrypt
